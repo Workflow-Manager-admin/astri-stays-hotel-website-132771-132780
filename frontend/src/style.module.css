@@ -6,6 +6,7 @@
   --color-c4c4c4: #c4c4c4;
   --color-000000: #000000;
 
+  /* Font Families */
   --font-montserrat: 'Montserrat', Arial, sans-serif;
   --font-garamond: 'Adobe Garamond Pro', serif;
   --font-roboto: 'Roboto', Arial, sans-serif;
@@ -21,44 +22,47 @@ body {
   font-size: 16px;
   line-height: 1.5;
 }
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Layout */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* NavBar + Menu bar */
-.menuBar {
-  display: flex;
-  justify-content: flex-end;
-  gap: 24px;
-}
-
-.typoMenu {
-  font-family: var(--font-montserrat);
-  font-size: 25px;
-  font-weight: 400;
-  line-height: 30.475px;
-  color: var(--color-ffffff);
-}
-
-.nav {
+/* Navbar styles */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 2;
   padding-top: 56px;
+  /* background transparent handled inline for sections */
+}
+.menuBar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+}
+.typoMenu {
+  font-family: var(--font-montserrat);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30.475px;
+  color: var(--color-ffffff);
+  transition: color 0.2s;
 }
 
-/* Typography */
+.typoMenu:active, .typoMenu.active {
+  color: var(--color-e0b973);
+}
+
+/* Typography classes 1:1 with HTML/Figma */
 .typoTitle {
   font-family: var(--font-garamond);
   font-size: 60px;
@@ -103,8 +107,15 @@ a {
   line-height: 30.475px;
   color: var(--color-ffffff);
 }
+.typoSmallTitle {
+  font-family: var(--font-garamond);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  color: var(--color-14274a);
+}
 
-/* Buttons */
+/* Button as per design */
 .btn {
   display: inline-block;
   border: none;
@@ -118,13 +129,32 @@ a {
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s;
+  min-width: 80px;
 }
 
 .btn:hover {
   background: #d3aa5b;
 }
 
-/* Footer */
+/* Newsletter input styles (matches form in footer/contact) */
+input[type="text"], input[type="email"], textarea {
+  border: 1.5px solid var(--color-e0b973);
+  border-radius: 8px;
+  padding: 12px 16px;
+  width: 100%;
+  font-size: 18px;
+  background: var(--color-ffffff);
+  margin-bottom: 18px;
+}
+
+/* Newsletter block and Footer utility classes */
+.newsletterBlock {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Footer blocks */
 .footer {
   background: var(--color-14274a);
   color: var(--color-ffffff);
@@ -160,34 +190,15 @@ a {
   font-size: 14px;
   line-height: 17px;
 }
-.newsletterBlock {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-input[type="text"], input[type="email"], textarea {
-  border: 1.5px solid var(--color-e0b973);
-  border-radius: 8px;
-  padding: 12px 16px;
-  width: 100%;
-  font-size: 18px;
-  background: var(--color-ffffff);
-  margin-bottom: 18px;
-}
 
-/* Responsive */
+/* Responsive corrections */
 @media (max-width: 900px) {
-  .container, .footerFlex {
-    flex-direction: column;
-    gap: 40px;
-  }
-  .menuBar {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 16px;
-  }
+  .footerFlex { flex-direction: column; gap: 40px; }
+  .menuBar { flex-direction: column; align-items: flex-end; gap: 16px; }
 }
-
+@media (max-width: 900px) {
+  .container { flex-direction: column; gap: 40px; }
+}
 @media (max-width: 600px) {
   body { font-size: 15px; }
   .typoTitle { font-size: 36px; line-height: 42px; }
