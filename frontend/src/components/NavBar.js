@@ -4,53 +4,37 @@ import styles from "../style.module.css";
 
 // PUBLIC_INTERFACE
 /**
- * Pixel-perfect NavBar as per Figma and static HTML.
+ * Pixel-perfect NavBar as per Figma and static HTML with full CSS module styling.
  */
 const NavBar = () => (
-  <nav className={`container ${styles.navbar}`} style={{
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    position: "relative",
-    zIndex: 2,
-    paddingTop: 56,
-    background: "transparent"
-  }}>
+  <nav className={`container ${styles.navbar}`}>
     <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
       <span className={styles.footerLogo}>LUXURY&nbsp;HOTELS</span>
     </div>
     <div className={styles.menuBar}>
       <NavLink
-        className={styles.typoMenu}
-        style={({ isActive }) => ({
-          color: isActive ? "var(--color-e0b973)" : "var(--color-ffffff)",
-          textDecoration: "none"
-        })}
+        className={({ isActive }) =>
+          `${styles.typoMenu} ${isActive ? styles.menuActive : ""}`
+        }
         to="/home"
         end
       >Home</NavLink>
       <NavLink
-        className={styles.typoMenu}
-        style={({ isActive }) => ({
-          color: isActive ? "var(--color-e0b973)" : "var(--color-ffffff)",
-          textDecoration: "none"
-        })}
+        className={({ isActive }) =>
+          `${styles.typoMenu} ${isActive ? styles.menuActive : ""}`
+        }
         to="/facilities"
       >Facilities</NavLink>
       <NavLink
-        className={styles.typoMenu}
-        style={({ isActive }) => ({
-          color: isActive ? "var(--color-e0b973)" : "var(--color-ffffff)",
-          textDecoration: "none"
-        })}
+        className={({ isActive }) =>
+          `${styles.typoMenu} ${isActive ? styles.menuActive : ""}`
+        }
         to="/rooms"
       >Rooms</NavLink>
       <NavLink
-        className={styles.typoMenu}
-        style={({ isActive }) => ({
-          color: isActive ? "var(--color-e0b973)" : "var(--color-ffffff)",
-          textDecoration: "none"
-        })}
+        className={({ isActive }) =>
+          `${styles.typoMenu} ${isActive ? styles.menuActive : ""}`
+        }
         to="/contact-us"
       >Contact-us</NavLink>
     </div>
