@@ -1,0 +1,194 @@
+:root {
+  --color-ffffff: #ffffff;
+  --color-14274a: #14274a;
+  --color-f7f7f7: #f7f7f7;
+  --color-e0b973: #e0b973;
+  --color-c4c4c4: #c4c4c4;
+  --color-000000: #000000;
+
+  --font-montserrat: 'Montserrat', Arial, sans-serif;
+  --font-garamond: 'Adobe Garamond Pro', serif;
+  --font-roboto: 'Roboto', Arial, sans-serif;
+  --font-arial: Arial, sans-serif;
+}
+
+/* Reset CSS */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--color-ffffff);
+  color: var(--color-14274a);
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* NavBar + Menu bar */
+.menuBar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.typoMenu {
+  font-family: var(--font-montserrat);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30.475px;
+  color: var(--color-ffffff);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  padding-top: 56px;
+}
+
+/* Typography */
+.typoTitle {
+  font-family: var(--font-garamond);
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 72px;
+  letter-spacing: 0px;
+  color: var(--color-14274a);
+}
+.typoSectionTitle {
+  font-family: var(--font-garamond);
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 72px;
+  letter-spacing: 24px;
+  color: var(--color-ffffff);
+}
+.typoSubtitle {
+  font-family: var(--font-montserrat);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 43.88px;
+  color: var(--color-14274a);
+}
+.typoDesc {
+  font-family: var(--font-roboto);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 29.3px;
+  color: var(--color-14274a);
+}
+.typoCardHead {
+  font-family: var(--font-montserrat);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 58.5px;
+  color: var(--color-14274a);
+}
+.typoButton {
+  font-family: var(--font-montserrat);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30.475px;
+  color: var(--color-ffffff);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  border: none;
+  outline: none;
+  background: var(--color-e0b973);
+  color: var(--color-ffffff);
+  font-family: var(--font-montserrat);
+  font-size: 25px;
+  font-weight: 700;
+  padding: 16px 42px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #d3aa5b;
+}
+
+/* Footer */
+.footer {
+  background: var(--color-14274a);
+  color: var(--color-ffffff);
+  padding: 64px 0 36px;
+}
+.footerFlex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.footerSection {
+  min-width: 180px;
+  flex: 1;
+}
+.footerLogo {
+  font-family: var(--font-garamond);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-e0b973);
+  margin-bottom: 8px;
+}
+.footerMenu, .footerSocial {
+  color: var(--color-f7f7f7);
+  font-size: 16px;
+}
+.footerSub {
+  color: var(--color-e0b973);
+  font-size: 16px;
+}
+.footerAddress {
+  color: var(--color-ffffff);
+  font-size: 14px;
+  line-height: 17px;
+}
+.newsletterBlock {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+input[type="text"], input[type="email"], textarea {
+  border: 1.5px solid var(--color-e0b973);
+  border-radius: 8px;
+  padding: 12px 16px;
+  width: 100%;
+  font-size: 18px;
+  background: var(--color-ffffff);
+  margin-bottom: 18px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container, .footerFlex {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .menuBar {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+  .typoTitle { font-size: 36px; line-height: 42px; }
+}
